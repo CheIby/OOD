@@ -15,12 +15,16 @@ class TorKham:
                     finalLst.append(output[1])
                     oldTemp = temp
                     print(f"\'{output[1]}\' -> {finalLst}")
-                else:
-                    if temp[2].upper() == oldTemp[len(oldTemp)-2].upper() and temp[3].upper() == oldTemp[len(oldTemp)-1].upper():
-                        output = temp.split(' ')
-                        finalLst.append(output[1])
-                        oldTemp = temp
-                        print(f"\'{output[1]}\' -> {finalLst}")
+                elif temp[2].upper() == oldTemp[len(oldTemp)-2].upper() and temp[3].upper() == oldTemp[len(oldTemp)-1].upper():
+                    output = temp.split(' ')
+                    finalLst.append(output[1])
+                    oldTemp = temp
+                    print(f"\'{output[1]}\' -> {finalLst}")
+                elif temp[2].upper() != oldTemp[len(oldTemp)-2].upper() and temp[3].upper() != oldTemp[len(oldTemp)-1].upper():
+                    output = temp.split(' ')
+                    finalLst.append(output[1])
+                    oldTemp = temp
+                    print(f"\'{output[1]}\' -> game over")
             elif temp[0] == 'R' :
                 temp=[]
                 oldTemp=[]
@@ -30,6 +34,7 @@ class TorKham:
                 print("" ,end='')
             else :
                 print(f"\'{temp}\' is Invalid Input !!!")
+                return ""
             i+=1
            
 print("*** TorKham HanSaa ***")

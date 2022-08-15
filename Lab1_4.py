@@ -1,16 +1,28 @@
 print("*** Fun with Drawing ***")
-num = input("Enter input : ")
-length = int(num)*4-3
-for i in range(length):
-    for j in range(length):
-        if i==0  or i==length-1 or j==0 or j==length-1:
-            print('#',end='')
-        elif i%2==0 and j%2==0:
-            if j>=i:
-                print ('#',end='')
-            else:
-                print('.',end='')
-        else:
-            print('.',end='')
-        
-    print()
+x = int(input("Enter input : "))
+c = 1
+y = 4*x-3
+if x < 2 :
+    print("Error")
+else :
+    print("#"*y)
+    print("#."+"."*(y-4*c)+".#")
+
+    for i in range(y//2-1):
+        if(i!=0 and i%2==0):
+            c += 1
+            print(("#."*c)+"."*(y-4*c)+(".#"*c))
+        elif(i!=0 and i%2!=0):
+            print(("#."*c)+"#"*(y-4*c)+(".#"*c))
+
+    c+=1
+
+    for i in range(y//2-1,0,-1):
+        if(i%2!=0):
+            c -= 1
+            print(("#."*c)+"#"*(y-4*c)+(".#"*c))
+        elif(i!=y//2 and i%2==0):
+            print(("#."*c)+"."*(y-4*c)+(".#"*c))
+
+    print("#."+"."*(y-4*c)+".#")
+    print("#"*y)
