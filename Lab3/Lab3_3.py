@@ -30,9 +30,7 @@ priority ={
 for i in inp:
     if i not in checkBox:
         print(i,end="")
-        # print('\n'+i)
     else:
-        # print('\n'+i, S.lst, sep = " and ")
         if i=='(':
             S.push(i)
         elif i==')' and not S.isEmpty():
